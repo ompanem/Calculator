@@ -163,8 +163,13 @@ class GUI implements ActionListener{
             }
         }
         if(e.getSource()==negative){
-            textField.setText(String.valueOf('-'));
-            firstNum = firstNum*-1;
+            //if it is negative make it look positive if its positive makr it negative
+            if(textField.getText().startsWith("-")){
+                textField.setText(textField.getText().substring(1));
+            }
+            else{
+                textField.setText("-" + textField.getText());
+            }
         }
     }
 ;
